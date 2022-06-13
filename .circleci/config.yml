@@ -13,6 +13,9 @@ jobs:
       - checkout:
           path: /projects/codesmithyide/github
       - run:
+          name: Build CodeSmithyGitHubWebhookServer library
+          command: cd /projects/codesmithyide/github/webhook-server/library/build/gnumake && make
+      - run:
           name: Build CodeSmithyGitHubWebhookServer binary
           command: cd /projects/codesmithyide/github/webhook-server/server/build/gnumake && make
 workflows:
