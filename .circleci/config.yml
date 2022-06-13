@@ -14,7 +14,7 @@ jobs:
           path: /projects/codesmithyide/github
       - run:
           name: Build CodeSmithyGitHubWebhookServer binary
-          command: cd /projects/codesmithyide/github/webhook/server/build/gnumake && make
+          command: cd /projects/codesmithyide/github/webhook-server/server/build/gnumake && make
 workflows:
   version: 2
   continuous_build:
