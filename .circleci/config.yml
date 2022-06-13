@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: nemuframework/gcc-nemu-cpp:0.16.0
+    steps:
+      - run:
+          name: Add GitHub SSH fingerprints
+          command: mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - run: 
+          name: "Set CODESMITHYIDE environment variables and create workspace directory"
+          command: mkdir -p /projects/codesmithyide && echo 'export CODESMITHYIDE="/projects/codesmithyide"' >> $BASH_ENV
+      - checkout:
+          path: /projects/codesmithyide/github
+workflows:
+  version: 2
+  continuous_build:
+    jobs:
+      - build
+  weekly_build:
+    jobs:
+      - build
+    triggers:
+      - schedule:
+          cron: "0 8 * * 0"
+          filters:
+            branches:
+              only:
+                 - main
