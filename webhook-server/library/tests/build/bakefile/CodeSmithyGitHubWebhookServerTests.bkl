@@ -16,7 +16,7 @@ program CodeSmithyGitHubWebhookServerTests : IshikoTestFramework
     if ($(toolset) == gnu)
     {
         cxx-compiler-options = "-std=c++11";
-        libs += IshikoTestFramework IshikoTestFrameworkCore IshikoXML;
+        libs += IshikoTestFramework IshikoTestFrameworkCore IshikoXML IshikoFileSystem boost_filesystem;
     }
 
     sources
