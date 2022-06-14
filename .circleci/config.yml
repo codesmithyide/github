@@ -16,8 +16,23 @@ jobs:
           name: Build CodeSmithyGitHubWebhookServer library
           command: cd /projects/codesmithyide/github/webhook-server/library/build/gnumake && make
       - run:
+          name: Test build
+          command: cd /projects/codesmithyide/github/webhook-server/library/tests/build/gnumake && make
+      - run:
+          name: Run the tests
+          command: cd /projects/codesmithyide/github/webhook-server/library/tests/build/gnumake && ./CodeSmithyGitHubWebhookServerTests --persistent-storage=/build/test-output --junit-xml-test-report=/build/test-results/CodeSmithyGitHubWebhookServer.xml
+      - run:
           name: Build CodeSmithyGitHubWebhookServer binary
           command: cd /projects/codesmithyide/github/webhook-server/server/build/gnumake && make
+      - store_artifacts:
+          path: /build/test-output
+          destination: test-output
+      - store_artifacts:
+          path: /build/test-results/CodeSmithyGitHubWebhookServer.xml
+          destination: CodeSmithyGitHubWebhookServer-test-results.xml
+      - store_test_results:
+          path: /build/test-results/CodeSmithyContentPlatformCore.xml
+
 workflows:
   version: 2
   continuous_build:
