@@ -21,10 +21,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5B039341-7FD8-5460-B121-87B5C23235A5}</ProjectGuid>
+    <ProjectGuid>{7325CBDC-15B6-5A12-A182-2616E6A8544F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CodeSmithyGitHubServer</RootNamespace>
-    <ProjectName>CodeSmithyGitHubServer</ProjectName>
+    <RootNamespace>CodeSmithyGitHubWebhookServer</RootNamespace>
+    <ProjectName>CodeSmithyGitHubWebhookServer</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

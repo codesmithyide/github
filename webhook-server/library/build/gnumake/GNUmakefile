@@ -54,19 +54,19 @@ _builddir := $(if $(findstring $(abspath $(builddir)),$(builddir)),,../../)$(bui
 _builddir_error := $(shell mkdir -p $(_builddir) 2>&1)
 $(if $(_builddir_error),$(error Failed to create build directory: $(_builddir_error)))
 endif
-all: ../bakefile/../../../../lib/lib$(if $(call _equal,$(config),Debug),CodeSmithyGitHubServer-d,CodeSmithyGitHubServer).a
+all: ../bakefile/../../../../lib/lib$(if $(call _equal,$(config),Debug),CodeSmithyGitHubServer-d,CodeSmithyGitHubWebhookServer).a
 
-../bakefile/../../../../lib/lib$(if $(call _equal,$(config),Debug),CodeSmithyGitHubServer-d,CodeSmithyGitHubServer).a: $(_builddir)CodeSmithyGitHubServer_GitHubWebhookServer.o
-	$(AR) rc $@ $(_builddir)CodeSmithyGitHubServer_GitHubWebhookServer.o
+../bakefile/../../../../lib/lib$(if $(call _equal,$(config),Debug),CodeSmithyGitHubServer-d,CodeSmithyGitHubWebhookServer).a: $(_builddir)CodeSmithyGitHubWebhookServer_GitHubWebhookServer.o
+	$(AR) rc $@ $(_builddir)CodeSmithyGitHubWebhookServer_GitHubWebhookServer.o
 	$(RANLIB) $@
 
-$(_builddir)CodeSmithyGitHubServer_GitHubWebhookServer.o: ../../src/GitHubWebhookServer.cpp
+$(_builddir)CodeSmithyGitHubWebhookServer_GitHubWebhookServer.o: ../../src/GitHubWebhookServer.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../../include/CodeSmithy/GitHub/WebhookServer -std=c++11 ../../src/GitHubWebhookServer.cpp
 
 clean:
 	rm -f $(_builddir)*.o
 	rm -f $(_builddir)*.d
-	rm -f ../bakefile/../../../../lib/lib$(if $(call _equal,$(config),Debug),CodeSmithyGitHubServer-d,CodeSmithyGitHubServer).a
+	rm -f ../bakefile/../../../../lib/lib$(if $(call _equal,$(config),Debug),CodeSmithyGitHubServer-d,CodeSmithyGitHubWebhookServer).a
 
 .PHONY: all clean
 

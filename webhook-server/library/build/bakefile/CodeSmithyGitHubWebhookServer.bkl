@@ -1,12 +1,12 @@
 toolsets = gnu vs2019 vs2017 vs2015 vs2013;
 
 gnu.makefile = ../gnumake/GNUmakefile;
-vs2019.solutionfile = ../vc16/CodeSmithyGitHubServer.sln;
-vs2017.solutionfile = ../vc15/CodeSmithyGitHubServer.sln;
-vs2015.solutionfile = ../vc14/CodeSmithyGitHubServer.sln;
-vs2013.solutionfile = ../vc12/CodeSmithyGitHubServer.sln;
+vs2019.solutionfile = ../vc16/CodeSmithyGitHubWebhookServer.sln;
+vs2017.solutionfile = ../vc15/CodeSmithyGitHubWebhookServer.sln;
+vs2015.solutionfile = ../vc14/CodeSmithyGitHubWebhookServer.sln;
+vs2013.solutionfile = ../vc12/CodeSmithyGitHubWebhookServer.sln;
 
-library CodeSmithyGitHubServer
+library CodeSmithyGitHubWebhookServer
 {
     includedirs += ../../../include/CodeSmithy/GitHub/WebhookServer;
 
