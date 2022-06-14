@@ -8,7 +8,7 @@ vs2013.solutionfile = ../vc12/CodeSmithyGitHubWebhookServer.sln;
 
 library CodeSmithyGitHubWebhookServer
 {
-    includedirs += ../../../include/CodeSmithy/GitHub/WebhookServer;
+    includedirs += ../../../../include/CodeSmithy/GitHub/WebhookServer;
 
     if ($(toolset) == gnu)
     {

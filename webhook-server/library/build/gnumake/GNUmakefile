@@ -61,7 +61,7 @@ all: ../bakefile/../../../../lib/lib$(if $(call _equal,$(config),Debug),CodeSmit
 	$(RANLIB) $@
 
 $(_builddir)CodeSmithyGitHubWebhookServer_GitHubWebhookServer.o: ../../src/GitHubWebhookServer.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../../include/CodeSmithy/GitHub/WebhookServer -std=c++11 ../../src/GitHubWebhookServer.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../../../include/CodeSmithy/GitHub/WebhookServer -std=c++11 ../../src/GitHubWebhookServer.cpp
 
 clean:
 	rm -f $(_builddir)*.o
