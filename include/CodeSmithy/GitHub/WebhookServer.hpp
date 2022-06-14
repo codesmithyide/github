@@ -6,6 +6,7 @@
 #ifndef _CODESMITHY_GITHUB_WEBHOOKSERVER_HPP_
 #define _CODESMITHY_GITHUB_WEBHOOKSERVER_HPP_
 
-#include "WebhookServer/GithubWebhookServer.hpp"
+#include "WebhookServer/GitHubWebhookServer.hpp"
+#include "WebhookServer/linkoptions.hpp"
 
 #endif
